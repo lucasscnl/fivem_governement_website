@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth; 
+}
+
+:root {
+    --primary: #0A314D;
+    --primary-variant: #062135;
+    --secondary: #D9D9D9;
+    --tertiary: #C1A783;
+    --eb: "EB Garamond", serif;
+    --ops: "Open Sans", serif; 
+    --ease: all ease-in-out 0.2s;
+}
+
+body {
+    color: #fff;
+    font-family: var(--ops);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+section h3 {
+    font-family: var(--eb);
+    margin: 0 auto;
+    width: fit-content;
+    position: relative;
+    font-size: 25pt;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin: 0 auto 50px auto;
+    z-index: 1;
+}
+
+section h3:after {
+    content: '';
+    width: 100px;
+    height: 3px;
+    background-color: var(--tertiary);
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+section h3::before{
+    content: '★ ★ ★';
+    display: block;
+    font-size: 20px;
+    color: #c8a97e; /* Couleur des étoiles */
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width:max-content;
+    transform: translateX(-50%);
+}
+
+.form-page {
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    max-height: 100vh;
+}
+
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/*-------------------------------------------------------------*/
+
+header {
+    background-color: var(--primary);
+    font-weight: light;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header img {
+    width: 109px;
+    margin: 10px auto;
+}
+
+nav {
+ width: 50%;
+ display: flex;
+}
+
+nav a {
+    font-size: 20px;
+    position: relative;
+    margin: auto 20px;
+    color: var(--secondary);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+nav a:after {
+    content: '';
+    display: block;
+    height: 1.5px;
+    width: 100%;
+    background: var(--tertiary);
+    transition: all ease-in-out 0.2s;
+  }
+
+nav a:hover:after {
+    width: 10%;
+  }
+
+
+aside {
+    background-color: var(--primary);
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    box-shadow: 11px 3px 300px 0px rgba(0,0,0,0.75);
+}
+
+aside img {
+    width: 115px;
+}
+
+.dashboard-container {
+    margin: 0;
+    width: 92%;
+}
+
+.dashboard-items, .dashboard-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.dashboard-items {
+    width: 100%;
+}
+
+/*-------------------------------------------------------------*/
+
+.slider {
+    width: 100%;
+    height: 90vh;
+    background-color: var(--primary-variant);
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    /* padding: 0 0 50px 0; */
+}
+
+.slider .slider-img, .form-page .form-back{
+    width: 100%;
+    filter: brightness(40%);
+    height: 100%;
+}
+
+.slider .slider-txt {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    line-height: 40pt; 
+    height: auto;
+
+}
+
+.slider-txt h1{
+    font-family: var(--eb);
+    font-size: 48pt;
+    margin: 0;
+    padding: 0;
+    font-weight: lighter;
+}
+
+.slider-txt h2{
+    font-size: 32pt;
+    margin: 0 0 50px 0;
+    padding: 0;
+    font-weight: lighter;
+}
+
+.slider-txt a{
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16pt;
+    padding: 20px 50px;
+    border: solid 3px var(--secondary);
+    transition: all ease-in-out 0.2s;
+}
+
+.slider-txt a:hover{
+    color: var(--tertiary);
+    border: solid 3px var(--tertiary);
+}
+
+/*-------------------------------------------------------------*/
+
+.news, .about, .gov {
+    padding: 50px;  
+}
+
+.news {
+    margin: 0;
+    height: auto;
+    background-color: var(--primary-variant);
+    z-index: 1;
+}
+
+.news-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: auto;
+}
+
+.news-box {
+    color: var(--primary);
+    display: flex;
+    height: 229px;
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 25px;  
+    border-radius: 5px;
+}
+
+.news-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.news-box h4 {
+    font-size: 18pt;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+.news-img {
+    margin: 0 28px 0 0;
+}
+
+.news-box .news-img img {
+    width: 179px;
+    height: 179px;
+    border-radius: 5px;
+}
+
+/*-------------------------------------------------------------*/
+
+.about {
+    background-color: var(--primary);
+}
+
+.about p {
+    font-size: 18pt;
+    line-height: 25pt;
+    text-align: center;
+    font-weight: 100;
+    width: 75%;
+    margin: auto;
+}
+
+/*-------------------------------------------------------------*/
+
+.gov {
+    background-color: var(--secondary);
+}
+
+.gov-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gov h3 {
+    color: var(--primary);
+}
+
+.gov-card {
+    background-color: var(--primary);
+    padding: 20px 30px;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.gov-card .gov-img {
+	text-align: center;
+    width: 208px;
+    height: 226px;
+    object-fit: cover;
+    overflow: hidden;
+    background-color: var(--tertiary);
+    border-radius: 5px;
+    margin: 5px auto;
+}
+
+.gov-card .gov-img img {
+    height: 226px;
+}
+
+.gov-card .gov-infos {
+    font-family: var(--eb);
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+.gov-infos h5 {
+    color: var(--tertiary);
+    font-size: 14pt;
+    margin: 0;
+    font-weight: 100;
+}
+
+.gov-infos h6 {
+    font-size: 13pt;
+    margin: 0;
+    font-weight: 100;
+}
+
+/*-------------------------------------------------------------*/
+
+footer {
+    background-color: var(--primary-variant);
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer nav {
+    width: fit-content;
+}
+
+footer img {
+    width: 232px;
+}
+
+footer p {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+/*-------------------------------------------------------------*/
+
+.form-container {
+    background-color: var(--primary);
+    padding: 50px;
+    width: 25%;
+    border-radius: 5px;
+}
+
+.form-box label.required::after {
+    content: ' *';
+    color: var(--tertiary);
+  }
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-container .login-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container .login-title h3 {
+    margin: 0;
+}
+
+.form-container .login-title .form-logo {
+    width: 109px;
+    margin: 0 17px 0 0;
+}
+
+.form-container form .form-box {
+    display: flex;
+    flex-direction: column;
+    margin: 67px 0 ;
+    padding: 0;
+    font-size: 14pt;
+}
+
+.form-box input, .form-box textarea, .form-box select {
+    background-color: var(--tertiary);
+    font-weight: 500;
+    border: none;
+    min-height: 30px;
+    margin: 2px 0 10px 0;
+    border-radius: 5px;
+    font-size: 12pt;
+    outline: none;
+    color: var(--primary-variant);
+    resize: none; 
+}
+
+.form-box select {
+    text-align: center;
+}
+
+.form-container form {
+    width: 100%;
+}
+
+.form-container form button {
+    display: block;
+    width: 80%;
+    margin: 1px auto;
+    background-color: var(--primary-variant);
+    border-radius: 5px;
+    border: solid var(--tertiary) 1px;
+    padding: 10px 5px;
+    color: var(--secondary);
+    font-size: 12pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: var(--ease);
+    font-family: var(--eb);
+}
+
+
+.form-container form button:hover {
+    background-color: var(--tertiary);
+    color: var(--primary-variant);
+}
